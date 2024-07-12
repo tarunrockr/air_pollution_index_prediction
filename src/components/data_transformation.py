@@ -93,14 +93,14 @@ class DataTransformation:
             train_df_input_transformed = ct.fit_transform(train_df_input)
             test_df_input_transformed  = ct.transform(test_df_input)
 
-            self.train_df = np.c_[ train_df_input_transformed, np.array(train_df_output) ]
-            self.test_df  = np.c_[test_df_input_transformed, np.array(test_df_output)]
+            self.train_arr = np.c_[ train_df_input_transformed, np.array(train_df_output) ]
+            self.test_arr  = np.c_[test_df_input_transformed, np.array(test_df_output)]
             logging.info("Data transformation process complete.")
 
             utils.save_object_as_pkl(self.preprocessor_file_path, ct)
             logging.info("Column transformer object saved as pickle file")
 
-            return (self.train_df, self.test_df, self.preprocessor_file_path)
+            return (self.train_arr, self.test_arr, self.preprocessor_file_path)
 
         except Exception as e:
             raise CustomException(e, sys)

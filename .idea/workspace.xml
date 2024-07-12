@@ -3,14 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="fbe747cd-4c07-449c-ae75-967bcecc2219" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notebook/MODEL TRAINING.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/notebook/MODEL TRAINING.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notebook/catboost_info/catboost_training.json" beforeDir="false" afterPath="$PROJECT_DIR$/notebook/catboost_info/catboost_training.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notebook/catboost_info/learn/events.out.tfevents" beforeDir="false" afterPath="$PROJECT_DIR$/notebook/catboost_info/learn/events.out.tfevents" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notebook/catboost_info/time_left.tsv" beforeDir="false" afterPath="$PROJECT_DIR$/notebook/catboost_info/time_left.tsv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/data_ingestion.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/data_ingestion.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/data_transformation.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/data_transformation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exceptions.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/exceptions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/model_training.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/model_training.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,8 +27,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/data_ingestion.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="489">
-              <caret line="71" lean-forward="true" selection-start-line="71" selection-end-line="71" />
+            <state relative-caret-position="506">
+              <caret line="75" column="2" lean-forward="true" selection-start-line="75" selection-start-column="2" selection-end-line="75" selection-end-column="2" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
               </folding>
@@ -44,8 +39,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/data_transformation.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="591">
-              <caret line="105" column="41" lean-forward="true" selection-start-line="105" selection-start-column="41" selection-end-line="105" selection-end-column="41" />
+            <state relative-caret-position="387">
+              <caret line="99" column="69" lean-forward="true" selection-start-line="99" selection-start-column="69" selection-end-line="99" selection-end-column="69" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
               </folding>
@@ -54,9 +49,21 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/model_training.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="506">
+              <caret line="35" column="33" lean-forward="true" selection-start-line="35" selection-start-column="33" selection-end-line="35" selection-end-column="33" />
+              <folding>
+                <element signature="e#0#6#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="523">
+            <state relative-caret-position="731">
               <caret line="43" selection-start-line="43" selection-end-line="43" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
@@ -103,6 +110,7 @@
         <option value="$PROJECT_DIR$/src/exceptions.py" />
         <option value="$PROJECT_DIR$/src/utils.py" />
         <option value="$PROJECT_DIR$/src/components/data_transformation.py" />
+        <option value="$PROJECT_DIR$/src/components/model_training.py" />
         <option value="$PROJECT_DIR$/src/components/data_ingestion.py" />
       </list>
     </option>
@@ -228,9 +236,6 @@
     <entry file="file://$PROJECT_DIR$/src/components/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/model_training.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -327,16 +332,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="523">
-          <caret line="43" selection-start-line="43" selection-end-line="43" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/artifacts/preprocessor.pkl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -344,20 +339,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="43" selection-start-line="43" selection-end-line="43" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/data_transformation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="591">
-          <caret line="105" column="41" lean-forward="true" selection-start-line="105" selection-start-column="41" selection-end-line="105" selection-end-column="41" />
+        <state relative-caret-position="387">
+          <caret line="99" column="69" lean-forward="true" selection-start-line="99" selection-start-column="69" selection-end-line="99" selection-end-column="69" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/model_training.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="35" column="33" lean-forward="true" selection-start-line="35" selection-start-column="33" selection-end-line="35" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#6#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/data_ingestion.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="489">
-          <caret line="71" lean-forward="true" selection-start-line="71" selection-end-line="71" />
+        <state relative-caret-position="506">
+          <caret line="75" column="2" lean-forward="true" selection-start-line="75" selection-start-column="2" selection-end-line="75" selection-end-column="2" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
           </folding>
