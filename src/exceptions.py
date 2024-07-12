@@ -1,6 +1,6 @@
 import os, sys
 # import logging
-from logger import logging
+from src.logger import logging
 
 def get_error_message(error, sys_object):
     exc_type, exc_obj, exc_traceback = sys_object.exc_info()
@@ -20,9 +20,9 @@ class CustomException(Exception):
         return self.error_message
 
 
-if __name__ == "__main__":
-    try:
-        a = 2/0
-    except Exception as e:
-        logging.info(f"Exception occured: {e}")
-        raise CustomException(e, sys)
+# if __name__ == "__main__":
+#     try:
+#         a = 2/0
+#     except Exception as e:
+#         logging.info(f"Exception occured: {e}")
+#         raise CustomException(e, sys)
