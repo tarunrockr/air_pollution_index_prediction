@@ -73,15 +73,15 @@ class DataTransformation:
             raise CustomException(e, sys)
 
     def data_transformation(self):
-        try:
 
+        try:
             logging.info("Data cleaning process")
             self.data_cleaning_process()
 
             logging.info("Getting column transformer object.")
             ct = self.get_proprocessor_obj()
 
-            #Seperate independent(input) and dependent(output) variables
+            # Seperate independent(input) and dependent(output) variables
             output_column_name = "air_pollution_index"
             train_df_input     = self.train_df.drop(columns=[output_column_name])
             train_df_output    = self.train_df[output_column_name]
@@ -93,7 +93,7 @@ class DataTransformation:
             train_df_input_transformed = ct.fit_transform(train_df_input)
             test_df_input_transformed  = ct.transform(test_df_input)
 
-            self.train_arr = np.c_[ train_df_input_transformed, np.array(train_df_output) ]
+            self.train_arr = np.c_[train_df_input_transformed, np.array(train_df_output)]
             self.test_arr  = np.c_[test_df_input_transformed, np.array(test_df_output)]
             logging.info("Data transformation process complete.")
 

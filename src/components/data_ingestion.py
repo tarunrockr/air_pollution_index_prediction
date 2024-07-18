@@ -1,9 +1,9 @@
 import os, sys
-import pandas as pd
-import numpy as np
 from src.exceptions import CustomException
 from src.logger import logging
 from src import utils
+import pandas as pd
+import numpy as np
 
 from sklearn.model_selection import train_test_split
 from dataclasses import dataclass
@@ -66,16 +66,17 @@ class DataIngestion:
                 self.train_data_path,
                 self.test_data_path
             )
-
         except Exception as e:
             raise CustomException(e, sys)
 
-# if __name__ == "__main__":
-#     obj = DataIngestion()
-#     train_path, test_path = obj.initiate_data_ingestion()
-# 
-#     transformation_obj    = DataTransformation(train_path, test_path)
-#     train_arr, test_arr,_ =  transformation_obj.data_transformation()
-#
-#     trainer_obj = ModelTrainer()
-#     trainer_obj.train_model(train_arr, test_arr)
+if __name__ == "__main__":
+
+    ingestion_obj         = DataIngestion()
+    train_path, test_path = ingestion_obj.initiate_data_ingestion()
+
+    transformation_obj    = DataTransformation(train_path, test_path)
+    train_arr, test_arr,_ = transformation_obj.data_transformation()
+
+    trainer_obj = ModelTrainer(train_arr, test_arr)
+    trainer_obj.train_model()
+
